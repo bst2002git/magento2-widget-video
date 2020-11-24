@@ -8,7 +8,7 @@ Copy extension to /app/code
 
 or
 
-composer require IDEC/magento2-widget-video
+composer require idec/magento2-widget-video
 
 Then run:
 

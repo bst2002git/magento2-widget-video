@@ -1,5 +1,5 @@
 {
-    "name": "IDEC/magento2-widget-video",
+    "name": "idec/magento2-widget-video",
     "description": "Magento 2 Video Widget making it possible to add responsive sized video clips in text editors",
     "type": "magento2-module",
     "license": "proprietary",
