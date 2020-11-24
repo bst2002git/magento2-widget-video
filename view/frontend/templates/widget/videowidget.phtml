@@ -1,0 +1,42 @@
+<?php if($block->getData('videotitle')): ?>
+   <h2><?php echo $block->getData('videotitle'); ?></h2>
+<?php endif; ?>
+<?php if($block->getData('videoid')): ?>
+
+	<?php if($block->getData('include_css') && $block->getData('include_css') == 'yes'): ?>
+    <style>
+      .videoWrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        padding-top: 25px;
+        height: 0;
+      }
+      .videoWrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  <?php endif; ?>
+
+  <div class="videoWrapper">
+		<?php if($block->getData('videosource') == 0): ?>
+			<iframe
+			  src="https://www.youtube.com/embed/<?php echo $block->getData('videoid'); ?>"
+				width="560"
+			  height="315"
+			  frameborder="0"
+			  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+			</iframe>
+		<?php elseif($block->getData('videosource') == 1): ?>
+			<iframe src="https://player.vimeo.com/video/<?php echo $block->getData('videoid'); ?>"
+				width="640"
+				height="360"
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <?php else: ?>
+      Sorry! Video source is missing.
+    <?php endif; ?>
+  </div>
+<?php endif; ?>

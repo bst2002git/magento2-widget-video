@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+  <widget class="IDEC\VideoWidget\Block\Widget\Videowidget" id="idec_videowidget">
+    <label>Video Widget</label>
+    <description>Insert video into editor</description>
+    <parameters>
+			<parameter name="videotitle" required="false" sort_order="10" visible="true" xsi:type="text">
+        <label>Video Title (optional)</label>
+      </parameter>
+			<parameter name="videosource" required="true" sort_order="20" visible="true" xsi:type="select"
+	      source_model="IDEC\VideoWidget\Model\Config\Source\VideoSource">
+        <label>Video Source</label>
+      </parameter>
+
+      <parameter name="videoid" required="true" sort_order="20" visible="true" xsi:type="text">
+        <label>Video ID</label>
+        <description translate="true">Only enter the videos ID, not the full video URL</description>
+      </parameter>
+
+      <parameter name="include_css" xsi:type="select" visible="true"
+                       source_model="IDEC\VideoWidget\Model\Config\Source\IncludeCss">
+        <label translate="true">Include responsive CSS</label>
+        <description translate="true">This will include a CSS script in the HTML to make the iframe responsive</description>
+      </parameter>
+
+    </parameters>
+  </widget>
+</widgets>
